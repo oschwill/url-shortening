@@ -1,0 +1,51 @@
+footer {
+  background-color: $main-background-dark-violett;
+
+  .footer-wrapper {
+    margin: 0 10vw;
+    margin-bottom: 50px;
+    padding-top: 75px;
+    display: flex;
+    justify-content: space-between;
+
+    .footer-right {
+      display: flex;
+      justify-content: space-between;
+      width: 40%;
+
+      article {
+        p {
+          font-family: PoppinsBold, Arial, Helvetica, sans-serif;
+          display: block;
+          color: $font-color-secondary;
+          margin-bottom: 15px;
+        }
+
+        a {
+          @extend .chlorine-color;
+          display: block;
+          color: $font-color-secondary;
+          margin-bottom: 5px;
+        }
+
+        &:last-of-type {
+          img {
+            &:not(:last-of-type) {
+              padding-right: 20px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .attribution {
+    font-size: 11px;
+    color: $font-color-secondary;
+    text-align: center;
+
+    a {
+      color: hsl(228, 49%, 63%);
+    }
+  }
+}

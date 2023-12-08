@@ -1,0 +1,31 @@
+.button-style {
+  font-size: 1.8rem;
+  width: 15%;
+  margin-left: 25px;
+  border-radius: 10px;
+  border: none;
+  background-color: $button-bg-color;
+  color: $font-color-secondary;
+  font-family: PoppinsBold, Arial, Helvetica, sans-serif;
+}
+
+.link-button-style {
+  text-decoration: none;
+  font-family: PoppinsBold, Arial, Helvetica, sans-serif;
+  color: $font-color-secondary;
+  background-color: $button-bg-color;
+  width: 10%;
+  text-align: center;
+  padding: 10px 15px;
+  border-radius: 25px;
+}
+
+.chlorine-color {
+  opacity: 0.75;
+}
+
+.hover-button {
+  &:hover {
+    background-color: $button-bg-hover-color;
+  }
+}

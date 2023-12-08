@@ -1,0 +1,23 @@
+@mixin style-background(
+  $marginTop,
+  $display,
+  $padding,
+  $bgColor,
+  $BgImage,
+  $bgRepeat,
+  $width,
+  $bgPosition,
+  $bgSize,
+  $bRadius
+) {
+  margin-top: $marginTop;
+  display: $display;
+  padding: $padding;
+  background-color: $bgColor;
+  background-image: $BgImage;
+  background-repeat: $bgRepeat;
+  width: $width;
+  background-position: $bgPosition;
+  background-size: $bgSize;
+  border-radius: $bRadius;
+}

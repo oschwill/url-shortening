@@ -1,0 +1,207 @@
+main {
+  margin-top: 5%;
+  background-color: $main-background-light-grey;
+
+  .shortener {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .url-output {
+      width: 80%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: white;
+      padding: 10px 25px;
+      margin-top: 30px;
+      border-radius: 10px;
+
+      .links {
+        width: 100%;
+        display: flex;
+        gap: 50px;
+        justify-content: space-between;
+
+        a {
+          font-weight: 800;
+          word-break: break-all;
+          &:last-of-type {
+            color: $button-bg-color;
+          }
+        }
+
+        p {
+          &:last-of-type {
+            color: $button-bg-color;
+          }
+        }
+      }
+
+      .copy {
+        @extend .button-style;
+        @extend .hover-button;
+        position: relative;
+        border-radius: 5px;
+        width: 8%;
+        padding: 15px;
+
+        span {
+          transition: all linear 0.5s;
+          background-color: wheat;
+          padding: 5%;
+          position: absolute;
+          right: -80%;
+          top: 20%;
+        }
+      }
+    }
+
+    article {
+      form {
+        display: flex;
+        width: 100%;
+        position: relative;
+
+        p {
+          position: absolute;
+          color: $font-error-color;
+          top: 100%;
+        }
+      }
+
+      .error {
+        border: 3px solid $font-error-color;
+        &::placeholder {
+          color: $font-error-color;
+        }
+      }
+
+      &:first-of-type {
+        @include style-background(
+          -120px,
+          flex,
+          75px,
+          $font-color-primary,
+          url('./images/bg-shorten-desktop.svg'),
+          no-repeat,
+          80%,
+          top,
+          cover,
+          10px
+        );
+
+        input {
+          padding: 25px;
+          font-size: 1.8rem;
+          width: 100%;
+          border-radius: 10px;
+        }
+
+        button {
+          @extend .button-style;
+          @extend .hover-button;
+        }
+      }
+
+      &:last-of-type {
+        text-align: center;
+        margin-top: 100px;
+
+        h2 {
+          font-size: 3.5rem;
+          font-family: PoppinsBold, Arial, Helvetica, sans-serif;
+          margin-bottom: 25px;
+        }
+
+        p {
+          @extend .chlorine-color;
+        }
+      }
+    }
+  }
+
+  .stairs-info {
+    margin: 75px 10vw;
+    display: flex;
+    margin-bottom: 150px;
+
+    .hyphen {
+      border-bottom: 7.5px solid $button-bg-color;
+      width: 5%;
+      transform: translateY(-125px);
+    }
+
+    article {
+      position: relative;
+      padding: 40px;
+      background-color: $main-background-white;
+
+      img {
+        background-color: $icon-bg-color;
+        padding: 20px;
+        border-radius: 50%;
+        position: absolute;
+        top: -40px;
+      }
+
+      h2 {
+        margin-top: 10%;
+        font-size: 2.5rem;
+        margin-bottom: 15px;
+        font-family: PoppinsBold, Arial, Helvetica, sans-serif;
+      }
+
+      p {
+        color: $font-color-primary;
+        line-height: 35px;
+        @extend .chlorine-color;
+      }
+
+      &:nth-of-type(2) {
+        transform: translateY(40px);
+      }
+
+      &:nth-of-type(3) {
+        transform: translateY(80px);
+      }
+    }
+  }
+
+  .get-started {
+    display: flex;
+    justify-content: center;
+
+    @include style-background(
+      7.5%,
+      flex,
+      85px,
+      $font-color-primary,
+      url('./images/bg-boost-desktop.svg'),
+      no-repeat,
+      100%,
+      center,
+      cover,
+      0
+    );
+
+    article {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+
+      h2 {
+        font-size: 3.5rem;
+        font-family: PoppinsBold, Arial, Helvetica, sans-serif;
+        color: $font-color-secondary;
+        margin-bottom: 30px;
+      }
+
+      a {
+        @extend .link-button-style;
+        @extend .hover-button;
+      }
+    }
+  }
+}
