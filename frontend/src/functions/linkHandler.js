@@ -3,7 +3,7 @@ export const createLinks = (input, setOutput, setLocalStorage, localStorage) => 
     origUrl: input,
   };
 
-  fetch('http://localhost:9000/', {
+  fetch(import.meta.env.VITE_FETCH_URL, {
     method: 'POST',
     headers: {
       'content-Type': 'application/json',
