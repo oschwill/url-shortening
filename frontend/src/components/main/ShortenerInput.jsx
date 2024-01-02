@@ -46,7 +46,11 @@ const ShortenerInput = () => {
         message: 'Invalid URL',
         error: true,
       });
+
+      return;
     }
+
+    input.current.value = '';
   };
 
   return (
