@@ -1,3 +1,7 @@
 export function validateUrl(value) {
-  return new URL(value);
+  try {
+    return new URL(value);
+  } catch (error) {
+    return false;
+  }
 }

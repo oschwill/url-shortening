@@ -1,9 +1,11 @@
-export const createLinks = (input, setOutput, setLocalStorage, localStorage) => {
+export const createLinks = async (input, setOutput, setLocalStorage, localStorage) => {
   const data = {
     origUrl: input,
   };
 
-  fetch(import.meta.env.VITE_FETCH_URL, {
+  let hasSuccess = false;
+
+  await fetch(import.meta.env.VITE_FETCH_URL, {
     method: 'POST',
     headers: {
       'content-Type': 'application/json',
@@ -15,7 +17,6 @@ export const createLinks = (input, setOutput, setLocalStorage, localStorage) => 
       if (response.ok) {
         return response.json();
       }
-      console.log(response.json());
     })
     .then((data) => {
       const newData = {
@@ -28,5 +29,11 @@ export const createLinks = (input, setOutput, setLocalStorage, localStorage) => 
         setLocalStorage((local) => [...local, newData]);
         setOutput((cur) => [...cur, newData]);
       }
+      hasSuccess = true;
+    })
+    .catch(() => {
+      hasSuccess = false;
     });
+
+  return hasSuccess;
 };

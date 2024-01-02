@@ -18,7 +18,7 @@ const ShortenerInput = () => {
     setOutput(localStorage);
   }, [localStorage]);
 
-  const handleLink = (e) => {
+  const handleLink = async (e) => {
     e.preventDefault();
     setHasError({
       message: '',
@@ -34,7 +34,19 @@ const ShortenerInput = () => {
       return;
     }
 
-    createLinks(input.current.value, setOutput, setLocalStorage, localStorage);
+    const hasSuccess = await createLinks(
+      input.current.value,
+      setOutput,
+      setLocalStorage,
+      localStorage
+    );
+
+    if (!hasSuccess) {
+      setHasError({
+        message: 'Invalid URL',
+        error: true,
+      });
+    }
   };
 
   return (

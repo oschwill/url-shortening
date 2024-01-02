@@ -12,7 +12,7 @@ router.post('/', async (req, res) => {
   const base = process.env.BASE;
 
   const urlId = nanoid();
-  console.log(urlId);
+
   if (validateUrl(origUrl)) {
     try {
       let url = await Url.findOne({ origUrl });
